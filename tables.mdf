@@ -1,1 +1,50 @@
 -- Make tables here
+
+
+CREATE TABLE schools (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	name VARCHAR(64),
+	city VARCHAR(64),
+	state VARCHAR(64),
+	created_at DATETIME,
+	updated_at DATETIME
+);
+
+
+CREATE TABLE students (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	first_name VARCHAR(64),
+	last_name VARCHAR(64),
+	email VARCHAR(128) UNIQUE,
+	created_at DATETIME,
+	updated_at DATETIME
+);
+
+
+CREATE TABLE classes (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	school_id INTEGER,
+	teacher_id INTEGER,
+	name VARCHAR(64),
+	subject VARCHAR(64),
+	code VARCHAR(128),
+	room INTEGER,
+	created_at DATETIME,
+	updated_at DATETIME
+);
+
+
+CREATE TABLE teachers (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	first_name VARCHAR(64),
+	last_name VARCHAR(64),
+	email VARCHAR(128) UNIQUE,
+	created_at DATETIME,
+	updated_at DATETIME
+);
+
+
+CREATE TABLE student_classes (
+	student_id INTEGER,
+	class_id INTEGER
+);
